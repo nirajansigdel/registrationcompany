@@ -1,9 +1,11 @@
 
  import Login from './Component/Login/Login';
-
-import ResetLevel from "./Component/Dashboard/User/Admin/Resetpassword/Resetlevel";
-import Level from "./Component/Dashboard/User/Admin/Setpassword/AllLevel";
-import EmployerSet from './Component/Dashboard/User/Employer/Main';
+import Level from "./Component/Dashboard/dashboardchild/User/Admins/Setpassword/AllLevel";
+import ResetLevel from './Component/Dashboard/dashboardchild/User/Admins/Resetpassword/Resetlevel';
+// import EmployerSet from './Component/Dashboard/User/Employer/Main';
+ import { Maindashboard } from './Component/Dashboard/maindashboard/Maindashboard';
+import Childnavbar from './Component/Dashboard/dashboardchild/Commannavbar/Childnavbar';
+import User from './Component/Dashboard/dashboardchild/User/Main/Main';
 
 
 
@@ -14,10 +16,15 @@ import EmployerSet from './Component/Dashboard/User/Employer/Main';
 function App() {
   return (
     <div className="App">
-      {/* <Login/> */}
+       {/* <Login/>   */}
    {/* <Level/> */}
-    {/* <ResetLevel/>  */}
-  <EmployerSet/>
+   {/* <ResetLevel/> */}
+  {/* <EmployerSet/> */}
+  {/* <Maindashboard/> */}
+  {/* <DropdownMenu/> */}
+  {/* <Childnavbar/> */}
+  <User/>
+  
     
      
     </div>
