@@ -1,5 +1,5 @@
 import React from 'react'
-import '../Main.css'
+ import '../Main.css'
 import Nav from '../../Navbar/Nav'
 import { FaStoreAlt } from "react-icons/fa";
 export default function Storage() {

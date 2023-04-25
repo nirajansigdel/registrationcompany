@@ -1,16 +1,17 @@
 import React from 'react'
-import Nav from '../../../Navbar/Nav'
-import '../../Main.css'
-import { FaUser } from "react-icons/fa";
+//  import '../Main.css'
+
+import { FaStoreAlt } from "react-icons/fa";
+import Nav from '../../../Navbar/Nav';
 export default function User() {
   const demo=[{id:1,
-    icon:<FaUser/>,
+    icon:<FaStoreAlt/>,
     name:"Admin"
   },
   {id:2,
-    icon:<FaUser/>,
+    icon:<FaStoreAlt/>,
     name:"Employer"
-  },
+  }
 ]
   return (
     <div className="main">
