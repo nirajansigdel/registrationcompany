@@ -1,0 +1,34 @@
+@import url('../../var/var.css');
+.container .child_card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  
+}
+.cards{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 200px;
+    height: 25vh;
+}
+.card_items{
+    background: var(--secondary);
+    height: 20vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 1%;
+    cursor: pointer;
+
+} 
+.card_items:hover{
+    background: var(--hovercolor);
+  
+}
+.card_items .icon,.card_items .name{
+    color:var(--textcolor);
+}

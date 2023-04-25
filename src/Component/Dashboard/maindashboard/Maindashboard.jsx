@@ -1,128 +1,74 @@
 import React from 'react'
+import Nav from '../Navbar/Nav'
 import './Maindashboard.css'
-import user from './User.JPG'
-
-import OrganizationDropdownMenu from '../dashboardchild/Organization/Main'
-import DartaDropdownMenu from '../dashboardchild/darta/Main'
-import ChalaniDropdownMenu from '../dashboardchild/chalani/Main'
-import StorageDropdownMenu from '../dashboardchild/storage/Main'
-import UserDropdownMenu from '../dashboardchild/storage/Main'
+import { FaBuilding, FaFile, FaFileAlt, FaStoreAlt, FaUser } from "react-icons/fa";
 export const Maindashboard = () => {
-    const navli = [
-        {
-            id: 1,
-            name: "Organization"
-
-        },
-        {
-            id: 2,
-            name: "Branch Register"
-        },
-        {
-            id: 3,
-            name: "Setting"
-        },
-        {
-            id: 4,
-            name: "Edit"
-        },
-    ]
     const demo = [{
         id: 1,
-        menu: <UserDropdownMenu />
+        icon: <FaUser />,
+        name: "User"
     },
 
     {
         id: 2,
-        menu: <OrganizationDropdownMenu />
+        icon: <FaBuilding />,
+        name: "Organization"
     },
     {
         id: 3,
-        menu: <DartaDropdownMenu />
+        icon: <FaFileAlt />,
+        name: "Darta"
 
     },
     {
         id: 4,
-        menu: <ChalaniDropdownMenu />
+        icon: <FaFile />,
+        name: "Chalani"
     },
     {
         id: 5,
-        menu: <StorageDropdownMenu />
+        icon: <FaStoreAlt />,
+        name: "Storage"
     }]
     return (
-        <div className='Dashboard'>
-            <div className="Dashboard_body">
-                <div className="navbar">
-                    <div className="admin_profile">
-                        <div className="admin">
-                            <div className="admin_image">
-                                <img src={user} alt="" srcset="" />
-                            </div>
+        <div className='main'>
+            <Nav />
+            {/*=================== container (dashboard)==================== */}
+            <div className="container">
+                {/*=================== dashboard(description,card)==================== */}
 
-                            <div>User</div>
-                        </div>
-                        <div className="profile">
-                            <span>Edit Profile</span>
-                        </div>
-
-                    </div>
-
-                    {navli.map(navli => (<ul>
-                        <li><a href="">{navli.name}</a></li>
-                    </ul>
-                    ))}
-
-                </div>
-                <div className="menu">
-                    <div className="logo_user">
-                        <div className="logo">KYC SATHI</div>
-                        <div className="user">
-                            <div className="image_name">
-                                <div className="userimage">
-                                    <img src={user} alt="" srcset="" />
-                                </div>
-                                <span className="name">
-                                    User name
-                                </span>
-                            </div>
-                            <span>Logged in as an admin</span>
-
-                        </div>
-                    </div>
+                <div className="dashboard">
+                    {/*=================== start of description==================== */}
                     <div className="description">
                         <span className='verification'>Kyc verification for</span>
                         <span className='choosefor'>Choose the appropriate option for your kyc verification type</span>
                     </div>
-
-
+                    {/*=================== start of card==================== */}
                     <div className="card">
-                        {
-                            demo.map(demo => (
-                                <div className="card_body" key={demo.id}>
-                                    <div className="card_content">
-                                        <div className="icon">
-                                            {demo.icon}
-                                        </div>
-                                        <div className="name">
-                                            {demo.name}
-                                        </div>
-                                        <div className="menuname">
-                                            {demo.menu}
+                        <div className="card_body">
+                            {
+                                demo.map(demo => (
+                                    <div className="card_item" key={demo.id}>
+                                        <div className="card_content">
+                                            <div className="icon">
+                                                {demo.icon}
+                                            </div>
+                                            <div className="name">
+                                                {demo.name}
+                                            </div>
+
                                         </div>
                                     </div>
-                                </div>
 
 
-                            ))
+                                ))
 
-                        }
+                            }
 
-
+                        </div>
 
 
                     </div>
-
-
                 </div>
             </div>
 
