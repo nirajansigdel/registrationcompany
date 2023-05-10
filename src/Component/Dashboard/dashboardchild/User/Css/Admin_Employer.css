@@ -1,11 +1,11 @@
 .Admin_Main {
     align-items: center;
     width: 100%;
-    height: 100vh;
     background-color: rgb(211, 231, 255);
     display: flex;
     flex-direction: column;
     justify-content: center;
+
 }
 
 .Admin_Main .AllContainer {
@@ -14,8 +14,8 @@
     box-shadow: 2px 6px 15px rgba(0, 0, 0, .3);
     width: 27%;
     align-items: center;
-    height: 87%;
     border-radius: 2%;
+    padding: 0.7%;
 
 }
 
@@ -23,7 +23,6 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
-    padding-top: 4%;
 }
 
 .Admin_Main .AllContainer .admin_body .user {
@@ -89,6 +88,7 @@
     gap: 5px;
 
 }
+
 
 .Admin_Main .AllContainer .admin_body .inputsection label {
     color: #554c4c;

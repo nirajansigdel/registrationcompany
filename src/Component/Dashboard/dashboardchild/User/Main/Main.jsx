@@ -1,31 +1,28 @@
 import React from 'react'
 //  import '../Main.css'
 
-import { FaStoreAlt } from "react-icons/fa";
+import {  FaUser } from "react-icons/fa";
 import Nav from '../../../Navbar/Nav';
+import { Link } from 'react-router-dom';
 export default function User() {
-  const demo=[{id:1,
-    icon:<FaStoreAlt/>,
-    name:"Admin"
-  },
-  {id:2,
-    icon:<FaStoreAlt/>,
-    name:"Employer"
-  }
-]
   return (
     <div className="main">
-      <Nav/>
+       <Nav/> 
     <div className='container'>
       <div className="child_card">
-        {demo.map(demo=>(
-          <div className="cards" key={demo.id}>
+          <Link to='/admin' className="cards">
             <div className="card_items">
-          <div className="icon">{demo.icon}</div>
-          <div className="name">{demo.name}</div>
+          <div className="icon"><FaUser/></div>
+          <div className="name">Admin</div>
+          </div> 
+          </Link>
+          <Link to ='/employer'className="cards">
+            <div className="card_items">
+          <div className="icon"><FaUser/></div>
+          <div className="name">Employer</div>
           </div>
-          </div>
-        ))}
+          </Link>
+       
         
       </div>
         

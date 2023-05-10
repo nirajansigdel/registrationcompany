@@ -2,33 +2,50 @@ import React from 'react'
 import Nav from '../Navbar/Nav'
 import './Maindashboard.css'
 import { FaBuilding, FaFile, FaFileAlt, FaStoreAlt, FaUser } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 export const Maindashboard = () => {
     const demo = [{
         id: 1,
         icon: <FaUser />,
-        name: "User"
+        name: "User",
+        to: "/user",
     },
 
     {
         id: 2,
         icon: <FaBuilding />,
-        name: "Organization"
+        name: "Organization",
+        to: "/organization",
     },
     {
         id: 3,
         icon: <FaFileAlt />,
-        name: "Darta"
+        name: "Darta",
+        to: "/darta",
 
     },
     {
         id: 4,
         icon: <FaFile />,
-        name: "Chalani"
+        name: "Chalani",
+        to: "/chalani",
     },
     {
         id: 5,
         icon: <FaStoreAlt />,
-        name: "Storage"
+        name: "Storage",
+        to: "/storage",
+    }, {
+        id: 6,
+        icon: <FaStoreAlt />,
+        name: "Registration Provider",
+        to: "/user",
+    },
+    {
+        id: 7,
+        icon: <FaStoreAlt />,
+        name: "Report",
+        to: "/user",
     }]
     return (
         <div className='main'>
@@ -48,18 +65,19 @@ export const Maindashboard = () => {
                         <div className="card_body">
                             {
                                 demo.map(demo => (
-                                    <div className="card_item" key={demo.id}>
-                                        <div className="card_content">
-                                            <div className="icon">
-                                                {demo.icon}
-                                            </div>
-                                            <div className="name">
-                                                {demo.name}
-                                            </div>
+                                    <Link to={demo.to ? demo.to : ""}>
+                                        <div className="card_item" key={demo.id}>
+                                            <div className="card_content">
+                                                <div className="icon">
+                                                    {demo.icon}
+                                                </div>
+                                                <div className="name">
+                                                    {demo.name}
+                                                </div>
 
+                                            </div>
                                         </div>
-                                    </div>
-
+                                    </Link>
 
                                 ))
 

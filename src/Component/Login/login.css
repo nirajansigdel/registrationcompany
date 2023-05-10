@@ -92,6 +92,7 @@ form {
     height: 5vh;
     border: 0.1px solid white;
     cursor: pointer;
+    width: 100%;
 
 }
 

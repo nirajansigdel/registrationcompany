@@ -1,39 +1,37 @@
 import React from 'react'
- import '../Main.css'
+import '../Main.css'
 import Nav from '../../Navbar/Nav'
 import { FaStoreAlt } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 export default function Storage() {
-  const demo=[{id:1,
-    icon:<FaStoreAlt/>,
-    name:"Bulk file"
-  },
-  {id:2,
-    icon:<FaStoreAlt/>,
-    name:"Handover Temparory"
-  },
-  {id:3,
-    icon:<FaStoreAlt/>,
-    name:"Handover Permanent"
-  },
-]
   return (
     <div className="main">
-      <Nav/>
-    <div className='container'>
-      <div className="child_card">
-        {demo.map(demo=>(
-          <div className="cards" key={demo.id}>
+      <Nav />
+      <div className='container'>
+        <div className="child_card">
+          <div className="cards">
+            <Link className="card_items">
+              <div className="icon"><FaStoreAlt/></div>
+              <div className="name">Bulk File</div>
+            </Link >
+          </div>
+          <Link className="cards">
             <div className="card_items">
-          <div className="icon">{demo.icon}</div>
-          <div className="name">{demo.name}</div>
-          </div>
-          </div>
-        ))}
-        
-      </div>
-        
+              <div className="icon"><FaStoreAlt/></div>
+              <div className="name">Handover Temparory</div>
+            </div>
+          </Link>
+          <Link className="cards">
+            <div className="card_items">
+              <div className="icon"><FaStoreAlt/></div>
+              <div className="name">Handover Temparory</div>
+            </div>
+          </Link>
 
         </div>
+
+
+      </div>
     </div>
   )
 }

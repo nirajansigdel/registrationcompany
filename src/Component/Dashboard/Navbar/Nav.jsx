@@ -1,7 +1,8 @@
 import React from 'react'
 import './Nav.css'
 import User from './User.JPG'
-import { FaStoreAlt } from "react-icons/fa";
+import { FaBuilding, FaFileArchive, FaHome, FaPaperPlane, FaStoreAlt, FaUser } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 export default function Nav() {
     return (
@@ -11,12 +12,14 @@ export default function Nav() {
             </div>
             <div className="navitem">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">User</a></li>
-                    <li><a href="#">Organization</a></li>
-                    <li><a href="#">Darta</a></li>
-                    <li><a href="#">Chalani</a></li>
-                    <li><a href="#">Storage</a></li>
+                   <li><Link to='/'>Home <div className='iconss'><FaHome/></div></Link></li>
+                   <li><Link to='/user'>User<div className='iconss'><FaUser/></div></Link></li>
+                   <li><Link to='/organization'>Organization<div className='iconss'><FaBuilding/></div></Link></li>
+                    <li><Link to='/darta'>Darta<div className='iconss'><FaFileArchive/></div></Link></li> 
+                    <li><Link to='/chalani'>Chalani<div className='iconss'><FaFileArchive/></div></Link></li>
+                   <li><Link to='/storage'>Storage<div className='iconss'><FaStoreAlt/></div></Link></li>
+                   <li><Link to='./'>Registration<div className='iconss'><FaStoreAlt/></div></Link></li> 
+                   <li><Link to='./'>Report<div className='iconss'><FaFileArchive/></div></Link></li>
 
                 </ul>
             </div>

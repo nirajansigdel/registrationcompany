@@ -1,0 +1,26 @@
+@import url('../../../../var/var.css');
+
+.content-body{
+    padding-top: 1%;
+    display: flex;
+    justify-content: space-between;
+}
+.content{
+    width: 45% ;
+}
+.content .content-body .name{
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 18px;
+color:var(--fontcolor);
+}
+.add_see{
+    display: flex;
+    width: 10%;
+    justify-content: space-between;
+}
+.add,.view{
+    cursor: pointer;
+}
