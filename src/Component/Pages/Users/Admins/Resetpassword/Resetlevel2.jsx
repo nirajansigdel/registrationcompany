@@ -50,7 +50,7 @@ export default function ResetLevel2() {
           <div className="admin_body">
             <div className="admin_profile">
               <div className="user">
-                <div className="backbutton">back</div>
+                <div className="backbutton">Resetlevel2</div>
                 <div className="userdescription">
                   <div className="userimage">
                     <img src={user} alt="image" />

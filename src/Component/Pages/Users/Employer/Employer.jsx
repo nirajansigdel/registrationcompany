@@ -13,7 +13,7 @@ export default function Employer() {
          <div className="reset_gif">
           <img src={reset} alt="" srcset="" />
         </div> 
-        <Link to='/resetbutton1' className="employer_Reset_button">
+        <Link to='/reset' className="employer_Reset_button">
           <button >Reset</button>
         </Link>
         </div>

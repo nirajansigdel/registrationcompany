@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaBackspace, FaPlusSquare } from "react-icons/fa";
 import Nav from '../../Navbar/Nav';
+import '../Darta/darta_chalani.css'
 
 
 export default function Chalani() {
@@ -53,9 +54,9 @@ export default function Chalani() {
     <div className='main'>
       <Nav />
       <div className="container">
-        <div className="adders">
-          <button onClick={() => setShowForm(true)}>
-            <FaPlusSquare />
+        <div className="add">
+          <button onClick={toggleform}>
+            <FaPlusSquare className='icon' />
           </button>
         </div>
 
@@ -98,9 +99,10 @@ export default function Chalani() {
           <div className="popup">
             <div className="popup-content">
               <form onSubmit={(e) => e.preventDefault()}>
-              <div className="closebutton" onClick={toggleform}>
-                <FaBackspace/>
-              </div>
+              <div className="cancel" onClick={toggleform}>
+                  <FaBackspace className='icon' />
+                </div>
+                <div className="formitem">
                 <div className="input_label">
                   <label htmlFor="sn">Sn</label>
                   <input type="text" name="sn" value={formData.sn} className='sn' onChange={handleInputChange} />
@@ -146,8 +148,11 @@ export default function Chalani() {
                   <input type="text" name='remark' className='remark' value={formData.remark} onChange={handleInputChange} />
                 </div>
 
-                <button type="submit" onClick={handleAddItem}>Apply</button>
+                </div>
               </form>
+              <div className="formbutton">
+                  <button type="submit" onClick={handleAddItem}>Apply</button>
+                </div>
             </div>
           </div>
         )}

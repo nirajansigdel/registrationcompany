@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './darta.css';
-import { FaBackspace, FaCreativeCommons, FaPlusSquare } from "react-icons/fa";
+import './darta_chalani.css';
+import { FaBackspace, FaPlusSquare } from "react-icons/fa";
 import Nav from '../../Navbar/Nav';
 import { Link } from 'react-router-dom';
 
@@ -59,16 +59,16 @@ export default function Darta() {
       remark: ''
     });
     alert('Data has been applied successfully.');
-  
+
   }
 
   return (
     <div className='main'>
       <Nav />
       <div className="container">
-        <div className="adders">
+        <div className="add">
           <button onClick={Openform}>
-            <FaPlusSquare />
+            <FaPlusSquare className='icon' />
           </button>
         </div>
 
@@ -117,72 +117,73 @@ export default function Darta() {
           <div className="popup">
             <div className="popup-content">
               <form onSubmit={(e) => e.preventDefault()}>
-              <div className="closebutton" onClick={toggleform}>
-                <FaBackspace/>
-              </div>
-              <div className="formitem">
-                <div className="input_label">
-                <label htmlFor="sn">S.N</label>
-                  <input type="text" name="sn" value={formData.sn} className='sn' onChange={handleInputChange} />
+                <div className="cancel" onClick={toggleform}>
+                  <FaBackspace className='icon' />
                 </div>
-                <div className="input_label">
-                  <label htmlFor="number">Number</label>
-                  <input type="text" name="number" value={formData.number} className='sn' onChange={handleInputChange} />
+                <div className="formitem">
+                  <div className="input_label">
+                    <label htmlFor="sn">S.N</label>
+                    <input type="text" name="sn" value={formData.sn} className='sn' onChange={handleInputChange} />
+                  </div>
+                  <div className="input_label">
+                    <label htmlFor="number">Number</label>
+                    <input type="text" name="number" value={formData.number} className='sn' onChange={handleInputChange} />
+                  </div>
+                  <div className="input_label">
+                    <label htmlFor="date">Date</label>
+                    <input type="text" name="date" value={formData.date} className='sn' onChange={handleInputChange} />
+                  </div>
+                  <div className="input_label">
+                    <label htmlFor="miti">Miti</label>
+                    <input type="text" name='miti' value={formData.miti} className='sn' onChange={handleInputChange} />
+                  </div>
+                  <div className="input_label">
+                    <label htmlFor="totalReceivedLetter">Total received lettter</label>
+                    <input type="text" name='totalReceivedLetter' className='sn' value={formData.totalReceivedLetter} onChange={handleInputChange} />
+                  </div>
+                  <div className="input_label">
+                    <label htmlFor="receivedDate">Received Date</label>
+                    <input type="text" name='receivedDate' className='sn' value={formData.receivedDate} onChange={handleInputChange} />
+                  </div>
+                  <div className="input_label">
+                    <label htmlFor="letterIssueCompany">Letter issus company</label>
+                    <input type="text" name='letterIssueCompany' className='sn' value={formData.letterIssueCompany} onChange={handleInputChange} />
+                  </div>
+                  <div className="input_label">
+                    <label htmlFor="officeRefNo">office Ref No</label>
+                    <input type="text" name='officeRefNo' className='sn' value={formData.officeRefNo} onChange={handleInputChange} />
+                  </div>
+                  <div className="input_label">
+                    <label htmlFor="subject">Subject</label>
+                    <input type="text" name='subject' lassName='sn' value={formData.subject} onChange={handleInputChange} />
+                  </div>
+                  <div className="input_label">
+                    <label htmlFor="previousRefNo">Previous ref num</label>
+                    <input type="text" name='previousRefNo' className='sn' value={formData.previousRefNo} onChange={handleInputChange} />
+                  </div>
+                  <div className="input_label">
+                    <label htmlFor="name">Name</label>
+                    <input type="text" name='name' className='sn' value={formData.name} onChange={handleInputChange} />
+                  </div>
+                  <div className="input_label">
+                    <label htmlFor="signature">Signature</label>
+                    <input type="text" name='signature' className='signature' value={formData.signature} onChange={handleInputChange} />
+                  </div>
+                  <div className="input_label">
+                    <label htmlFor="checkerdate">date</label>
+                    <input type="text" name='checkerdate' className='checkerdate' value={formData.checkerdate} onChange={handleInputChange} />
+                  </div>
+                  <div className="input_label">
+                    <label htmlFor="remark">Remark</label>
+                    <input type="text" name='remark' className='remark' value={formData.remark} onChange={handleInputChange} />
+                  </div>
                 </div>
-                <div className="input_label">
-                  <label htmlFor="date">Date</label>
-                  <input type="text" name="date" value={formData.date} className='sn' onChange={handleInputChange} />
-                </div>
-                <div className="input_label">
-                  <label htmlFor="miti">Miti</label>
-                  <input type="text" name='miti' value={formData.miti} className='sn' onChange={handleInputChange} />
-                </div>
-                <div className="input_label">
-                  <label htmlFor="totalReceivedLetter">Total received lettter</label>
-                  <input type="text" name='totalReceivedLetter' className='sn' value={formData.totalReceivedLetter} onChange={handleInputChange} />
-                </div>
-                <div className="input_label">
-                  <label htmlFor="receivedDate">Received Date</label>
-                  <input type="text" name='receivedDate' className='sn' value={formData.receivedDate} onChange={handleInputChange} />
-                </div>
-                <div className="input_label">
-                  <label htmlFor="letterIssueCompany">Letter issus company</label>
-                  <input type="text" name='letterIssueCompany' className='sn' value={formData.letterIssueCompany} onChange={handleInputChange} />
-                </div>
-                <div className="input_label">
-                  <label htmlFor="officeRefNo">office Ref No</label>
-                  <input type="text" name='officeRefNo' className='sn' value={formData.officeRefNo} onChange={handleInputChange} />
-                </div>
-                <div className="input_label">
-                  <label htmlFor="subject">Subject</label>
-                  <input type="text" name='subject' lassName='sn' value={formData.subject} onChange={handleInputChange} />
-                </div>
-                <div className="input_label">
-                  <label htmlFor="previousRefNo">Previous ref num</label>
-                  <input type="text" name='previousRefNo' className='sn' value={formData.previousRefNo} onChange={handleInputChange} />
-                </div>
-                <div className="input_label">
-                  <label htmlFor="name">Name</label>
-                  <input type="text" name='name' className='sn' value={formData.name} onChange={handleInputChange} />
-                </div>
-                <div className="input_label">
-                  <label htmlFor="signature">Signature</label>
-                  <input type="text" name='signature' className='signature' value={formData.signature} onChange={handleInputChange} />
-                </div>
-                <div className="input_label">
-                  <label htmlFor="checkerdate">date</label>
-                  <input type="text" name='checkerdate' className='checkerdate' value={formData.checkerdate} onChange={handleInputChange} />
-                </div>
-                <div className="input_label">
-                  <label htmlFor="remark">Remark</label>
-                  <input type="text" name='remark' className='remark' value={formData.remark} onChange={handleInputChange} />
-                </div>
-                </div>
-               
+             
               </form>
               <div className="formbutton">
-                <button type="submit" onClick={handleAddItem}>Apply</button>
+                  <button type="submit" onClick={handleAddItem}>Apply</button>
                 </div>
+
             </div>
           </div>
         )}
