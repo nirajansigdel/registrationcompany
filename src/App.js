@@ -1,40 +1,29 @@
-
-import { Maindashboard } from "./Component/Dashboard/maindashboard/Maindashboard";
-import Organization from "./Component/Dashboard/dashboardchild/Organization/Main";
-import User from "./Component/Dashboard/dashboardchild/User/Main/Main";
-import Storage from "./Component/Dashboard/dashboardchild/storage/Main";
-import Login from "./Component/Login/Login";
-import Admin from "./Component/Dashboard/dashboardchild/User/Main/Main2";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Darta from "./Component/Dashboard/dashboardchild/darta/Main";
-import Chalani from "./Component/Dashboard/dashboardchild/chalani/Main";
-import Employer from "./Component/Dashboard/dashboardchild/User/Employer/Employer";
-import Corporate from "./Component/Dashboard/dashboardchild/Organization/Main2";
-import Level1 from "./Component/Dashboard/dashboardchild/User/Admins/Setpassword/level/Level1";
-import Level2 from "./Component/Dashboard/dashboardchild/User/Admins/Setpassword/level/Level2";
-import Level3 from "./Component/Dashboard/dashboardchild/User/Admins/Setpassword/level/Level3";
-import Level4 from "./Component/Dashboard/dashboardchild/User/Admins/Setpassword/level/Level4";
-import ResetLevel from "./Component/Dashboard/dashboardchild/User/Admins/Resetpassword/Resetlevel1";
-import Dropdown from "./Component/Dashboard/dashboardchild/User/Admins/Resetpassword/dop";
-import View from "./Component/Dashboard/dashboardchild/Organization/view/View";
-import ResetLevel1 from "./Component/Dashboard/dashboardchild/User/Admins/Resetpassword/Resetlevel1";
-import ResetLevel2 from "./Component/Dashboard/dashboardchild/User/Admins/Resetpassword/Resetlevel2";
-import ResetLevel4 from "./Component/Dashboard/dashboardchild/User/Admins/Resetpassword/Resetlevel4";
-import ResetLevel3 from "./Component/Dashboard/dashboardchild/User/Admins/Resetpassword/Resetlevel3";
+import { Home } from "./Component/Pages/Home/Home";
+import Login from "./Component/Login/Login";
+import Employer from "./Component/Pages/Users/Employer/Employer";
+import Darta from './Component/Pages/Darta/Darta'
+import Chalani from './Component/Pages/chalani/Chalani';
+import Storage from './Component/Pages/storage/Main'
+import View from './Component/Pages/Organizations/View'
+import Organization from "./Component/Pages/Organizations/Organizationchild/Main";
+import Corporate from "./Component/Pages/Organizations/organizationgrandchild/Main2";
+import User from "./Component/Pages/Users/User";
+import Setlevel from "./Component/Pages/Users/setlevel";
+import Bulk from "./Component/Pages/storage/Bulk/Bulk";
+import Resetlevel from "./Component/Pages/Users/Resetlevel";
+
 
 function App() {
   return (
+
     <BrowserRouter>
       <Routes>
-        <Route exact path="" element={<Maindashboard />}></Route>
+        <Route exact path="" element={<Home />}></Route>
         <Route exact path="user" element={<User />}></Route>
-        <Route exact path="admin" element={<Admin/>}></Route>
-        <Route exact path="reset" element={<ResetLevel />}></Route>
-        <Route exact path="resetbutton1" element={<ResetLevel1/>}></Route>
-        <Route exact path="resetbutton2" element={<ResetLevel2/>}></Route>
-        <Route exact path="resetbutton3" element={<ResetLevel3/>}></Route>
-        <Route exact path="resetbutton4" element={<ResetLevel4/>}></Route>
         <Route exact path="employer" element={<Employer />}></Route>
+        <Route exact path="admin" element={<Setlevel />}></Route>
+        <Route exact path="reset" element={<Resetlevel />}></Route>
         <Route exact path="organization" element={<Organization />}></Route>
         <Route exact path="corporate" element={<Corporate />}></Route>
         <Route exact path="Branch" element={<Corporate />}></Route>
@@ -42,15 +31,12 @@ function App() {
         <Route exact path="darta" element={<Darta />}></Route>
         <Route exact path="chalani" element={<Chalani />}></Route>
         <Route exact path="storage" element={<Storage />}></Route>
+        <Route exact path="bulk" element={<Bulk />}></Route>
+
 
 
       </Routes>
       <div className="App">
-
-         {/* <Dropdown/> 
-        */}
-
-  
 
       </div>
 
