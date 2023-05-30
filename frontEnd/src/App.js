@@ -12,6 +12,7 @@ import User from "./Component/Pages/Users/User";
 import Setlevel from "./Component/Pages/Users/setlevel";
 import Bulk from "./Component/Pages/storage/Bulk/Bulk";
 import Resetlevel from "./Component/Pages/Users/Resetlevel";
+import Handover from "./Component/Pages/storage/HandOver/Handover";
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         <Route exact path="chalani" element={<Chalani />}></Route>
         <Route exact path="storage" element={<Storage />}></Route>
         <Route exact path="bulk" element={<Bulk />}></Route>
+        <Route exact path="handover" element={<Handover />}></Route>
 
 
 
