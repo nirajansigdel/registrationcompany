@@ -13,6 +13,7 @@ import Setlevel from "./Component/Pages/Users/setlevel";
 import Bulk from "./Component/Pages/storage/Bulk/Bulk";
 import Resetlevel from "./Component/Pages/Users/Resetlevel";
 import Handover from "./Component/Pages/storage/HandOver/Handover";
+import Registration from "./Registartion/Registration";
 
 
 function App() {
@@ -20,7 +21,9 @@ function App() {
 
     <BrowserRouter>
       <Routes>
-        <Route exact path="" element={<Home />}></Route>
+        <Route exact path="" element={<Registration />}></Route>
+         <Route exact path="/login" element={<Login />}></Route> 
+        <Route exact path="/home" element={<Home />}></Route>
         <Route exact path="user" element={<User />}></Route>
         <Route exact path="employer" element={<Employer />}></Route>
         <Route exact path="admin" element={<Setlevel />}></Route>

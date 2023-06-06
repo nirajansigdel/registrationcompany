@@ -1,47 +1,33 @@
-import React from 'react';
-import './login.css';
-import login from './Login.png';
+import React, { useState } from "react";
+import "./login.css";
+import login from "./Login.png";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function Login() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const [getusername, setusername] = useState();
+  const [getpassword, setpassword] = useState();
+  const [getlogged, setlogged] = useState(false);
 
-    const usernameInput = event.target.elements.name;
-    const passwordInput = event.target.elements.password;
+  const applylogin = async () => {
+    try {
+      const reslogin = await axios.post("http://localhost:4000/api/login", {
+        username: getusername,
+        password: getpassword,
+      });
 
-    const username = usernameInput.value.trim();
-    const password = passwordInput.value.trim();
+      const responsedata = reslogin.data;
 
-    let errorMessage = '';
-
-    // Validate username
-    if (!username) {
-      errorMessage = 'Username is required';
-    } else if (
-      !/^\d{10}$/.test(username) &&
-      !/^[A-Za-z0-9]+[\w.-]+@\w+\.\w+$/.test(username)
-    ) {
-      errorMessage = 'number should be 10 digit or valid email';
+      if (reslogin.status === 200) {
+        setlogged(true);
+      }
+    } catch (error) {
+      alert(error.response.data.message);
     }
-
-    // Validate password
-    if (!password) {
-      errorMessage = 'Password is required';
-    } else if (
-      !/(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()]).{8,}/.test(password)
-    ) {
-      errorMessage =
-        'Password must contain at least 8 characters with one uppercase letter, one digit, and one special character';
-    }
-
-    if (errorMessage) {
-      alert(errorMessage);
-      return;
-    }
-
-    // Perform login logic if the form is valid
-    console.log('Logging in...');
   };
+  if (getlogged) {
+    window.location.href = "/home";
+  }
 
   return (
     <div className="Main">
@@ -53,21 +39,31 @@ export default function Login() {
               <img src={login} alt="image" />
             </div>
           </div>
-          <form onSubmit={handleSubmit}>
+          <form>
             <div className="inputsection">
-              <label htmlFor="name">User name/ email id</label>
-              <input type="text" name="name" id="name" />
+              <label htmlFor="name">Username</label>
+              <input
+                type="text"
+                name="name"
+                value={getusername}
+                onChange={(e) => setusername(e.target.value)}
+              />
             </div>
             <div className="inputsection">
               <label htmlFor="password">Password</label>
-              <input type="password" name="password" id="password" />
+              <input
+                type="password"
+                name="password"
+                value={getpassword}
+                onChange={(e) => setpassword(e.target.value)}
+              />
             </div>
             <div className="inputsection">
-              <button type="submit">Login</button>
+              <button type="button" onClick={applylogin}>
+                Login
+              </button>
             </div>
-            <div className="inputsection">
-              <p>Forget Password</p>
-            </div>
+            <Link>Forget Password</Link>
           </form>
         </div>
       </div>
